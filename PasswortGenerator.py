@@ -2,7 +2,7 @@
 import random
 import time
 
-# Variabeln und Functions
+# Variabeln
 Ja = True
 Nein = False
 Liste = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "o", "p", "q", "r", "s", "t", "u", "v",
