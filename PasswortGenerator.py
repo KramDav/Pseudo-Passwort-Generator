@@ -11,6 +11,7 @@ ListeOhneS = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "o", "
               "w"  "x", "y", "z"]
 passwort = []
 
+
 #Functions
 
 def passwort_generator_M():
@@ -34,7 +35,15 @@ def passwort_generatorO():
 
 
 # Code
-anzahl = int(input("Wieviele Zeichen soll dein Passwort beinhalten?: "))
+
+try:
+    anzahl = int(input("Wieviele Zeichen soll dein Passwort beinhalten?: "))
+except ValueError:
+    print("Ungültige Eingabe!")
+    time.sleep(2)
+    anzahl = ""
+    while anzahl == "":
+        anzahl = int(input("Wieviele Zeichen soll dein Passwort beinhalten?: "))
 sonderzeichen = bool(input("Soll dein Passwort Sonderzeichen beinhalten? [Ja/Nein]: "))
 if sonderzeichen == True:
     passwort_generator_M()
@@ -58,5 +67,8 @@ while 1 == True:
         exit()
     else:
         exit()
+
+#Exceptions
+
 
 
