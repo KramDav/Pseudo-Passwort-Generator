@@ -11,12 +11,9 @@ ListeOhneS = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "o", "
               "w"  "x", "y", "z"]
 passwort = []
 
+#Functions
 
-
-# Code
-anzahl = int(input("Wieviele Zeichen soll dein Passwort beinhalten?: "))
-sonderzeichen = bool(input("Soll dein Passwort Sonderzeichen beinhalten? [Ja/Nein]: "))
-if sonderzeichen == True:
+def passwort_generator_M():
     for i in range((anzahl), 0, -1):
         passwort.append(random.choice(Liste))
         time.sleep(0)
@@ -25,7 +22,7 @@ if sonderzeichen == True:
         print(x, end="")
     time.sleep(5)
 
-elif sonderzeichen == False:
+def passwort_generatorO():
     for i in range((anzahl), 0, -1):
         passwort.append(random.choice(ListeOhneS))
         time.sleep(0)
@@ -33,6 +30,17 @@ elif sonderzeichen == False:
     for x in passwort:
         print(x)
     time.sleep(5)
+
+
+
+# Code
+anzahl = int(input("Wieviele Zeichen soll dein Passwort beinhalten?: "))
+sonderzeichen = bool(input("Soll dein Passwort Sonderzeichen beinhalten? [Ja/Nein]: "))
+if sonderzeichen == True:
+    passwort_generator_M()
+
+elif sonderzeichen == False:
+    passwort_generatorO()
 
 while 1 == True:
     passwort = []
@@ -42,22 +50,10 @@ while 1 == True:
         anzahl = int(input("Wieviele Zeichen soll dein Passwort beinhalten?: "))
         sonderzeichen = bool(input("Soll dein Passwort Sonderzeichen beinhalten? [Ja/Nein]: "))
         if sonderzeichen == True:
-            for i in range((anzahl), 0, -1):
-                passwort.append(random.choice(Liste))
-                time.sleep(0)
-            print("Dein generiertes Passwort lautet: ", end="")
-            for x in passwort:
-                print(x, end="")
-            time.sleep(5)
+            passwort_generator_M()
 
         elif sonderzeichen == False:
-            for i in range((anzahl), 0, -1):
-                passwort.append(random.choice(ListeOhneS))
-                time.sleep(0)
-            print("Dein generiertes Passwort lautet: ", end="")
-            for x in passwort:
-                print(x)
-            time.sleep(5)
+            passwort_generator_M()
     elif erneut == "Nein":
         exit()
     else:
